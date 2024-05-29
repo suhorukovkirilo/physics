@@ -1,0 +1,206 @@
+:root {
+    --white: #eeeeee; 
+    --black: #4b4b4b;
+    --gray: #4b4b4b3b;
+    --red: #ff4b4b;
+    --orange: #ff9600;
+    --yellow: #ffc300;
+    --peach-orange: #ffce8e;
+    --light-blue: #1cb0f5;
+    --blue: #1899d5;
+    --dark-blue: #1254a9;
+    --dark-green: #47a600;
+    --green: #58cc02;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--white);
+    font-family: 'Montserrat';
+}
+
+button {
+    display: flex;
+    background: none;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 0 4px;
+    height: 50px;
+    padding: 16px;
+    align-items: center;
+    font: 600 15px / 1.2 din-round, sans-serif;
+    justify-content: center;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+
+button::before {
+    content: "";
+    border-radius: 16px;
+    bottom: 0;
+    box-shadow: 0 4px 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 5%;
+    z-index: -1;
+    height: 90%;
+}
+
+button:active {
+    transform: translateY(4px) translateZ(0);
+}
+
+button:active::before {
+    box-shadow: none;
+}
+
+@font-face {
+    font-family: PointSoft;
+    src: url("PointSoft.otf") format("opentype");
+}
+
+header nav {
+    position: absolute;
+    width: 100%;
+    margin-left: -1%;
+    top: 0;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--gray);
+}
+
+header nav * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#start-1, #start-2 {
+    margin-top: 8px;
+    color: rgb(255, 255, 255);
+}
+
+#start-2 {
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#start-1::before, #start-2::before {
+    background-color: var(--green);
+    color: var(--dark-green);
+}
+
+header nav div {
+    font-family: PointSoft;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--orange);
+    margin: 0;
+    margin-left: 100px;
+    margin-right: 50px;
+    text-align: left;
+}
+
+header .content {
+    margin-top: 6%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .content svg {
+    width: 384px;
+}
+
+header .content svg g {
+    animation: atom 6s linear infinite 1s;
+}
+
+header .content .text h1 {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 36px;
+}
+
+header .content .text p {
+    color: var(--black);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+header .column-set {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .column {
+    width: 22vw;
+    height: 70vmin;
+    border: 2px solid var(--gray);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header .column h1 {
+    font-size: 2vw;
+    transform: translateY(-5vh);
+}
+
+header .column .text {
+    transform: translateY(-9vh);
+    margin: 1vw;
+    font-size: 1.25vw;
+}
+
+header .column button {
+    color: rgb(255, 255, 255);
+    transform: translateY(-5vh);
+}
+
+header .column button::before {
+    color: var(--dark-blue);
+    background-color: var(--blue);
+}
+
+svg:not(#atom) path {
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
+    animation: svg-line-draw 3s ease-in-out forwards 0.2s;
+}
+
+svg g {
+    animation: showin 1s linear;
+}
+
+@keyframes svg-line-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes showin {
+    from {opacity: 0;};
+    to {opacity: 1;};
+}
+
+@keyframes atom {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -1000;
+    }
+}
