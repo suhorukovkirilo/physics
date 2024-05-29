@@ -1,5 +1,5 @@
 var name_space = "physics"
-var running_mode = "local";
+var running_mode = "global";
 
 function redirect(page="") {
     var domain = location.href.split("/" + name_space + "/")[0];
