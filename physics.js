@@ -11,6 +11,5 @@ function redirect(page="") {
             href += "index.html";
         }
     }
-    href.replace("//", "/")
     location.href = href;
 }
